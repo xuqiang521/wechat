@@ -120,14 +120,14 @@ var digit = [
     [0,1,1,0,0,0,0]
   ]//9
 ];
-var WINDOW_WIDTH = 375
-  , WINDOW_HEIGHT = 500
+var CANVAS_WIDTH = 375
+  , CANVAS_HEIGHT = 500
   , RADIUS = 8
   , MARGIN_TOP = 60
   , MARGIN_LEFT = 60
   , LOOPTIME = 60;
 function render(time,cxt){
-  cxt.clearRect(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
+  cxt.clearRect(0,0,CANVAS_WIDTH,CANVAS_HEIGHT);
   renderDigit(MARGIN_LEFT , MARGIN_TOP , parseInt(time/10) , cxt );
   renderDigit(MARGIN_LEFT + 15*(RADIUS+1) , MARGIN_TOP , parseInt(time%10) , cxt );
 }

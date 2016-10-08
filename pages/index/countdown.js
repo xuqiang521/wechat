@@ -4,8 +4,7 @@ var CANVAS_WIDTH = 375
   , CANVAS_HEIGHT = 500
   , RADIUS = 8
   , MARGIN_TOP = 60
-  , MARGIN_LEFT = 60
-  , LOOPTIME = 60;
+  , MARGIN_LEFT = 60;
 function render(time,cxt){
   cxt.clearRect(0,0,CANVAS_WIDTH,CANVAS_HEIGHT);
   renderDigit(MARGIN_LEFT , MARGIN_TOP , parseInt(time/10) , cxt );
@@ -31,14 +30,14 @@ function loopTime(time,cxt){
     actions:cxt.getActions()
   });
 }
-function init(cxt){
-  loopTime(LOOPTIME,cxt)
+function init(time,cxt){
+  loopTime(time,cxt)
   var loop = setInterval(function(){
-    LOOPTIME--;
-    (LOOPTIME < 1 ) && (
+    time--;
+    (time < 1 ) && (
       clearInterval(loop)
     )
-    loopTime(LOOPTIME,cxt)
+    loopTime(time,cxt)
   },1000);
 }
 

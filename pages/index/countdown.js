@@ -42,6 +42,5 @@ function init(time,cxt){
 }
 
 module.exports = {
-  render:render,
   init:init
 }
